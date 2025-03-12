@@ -44,7 +44,7 @@ async def send_admin(call: CallbackQuery, state: FSMContext):
 @dp.callback_query_handler(xabar_callback.filter(natija="post"), user_id=ADMINS  )
 async def approve_post(call: CallbackQuery):
     await call.answer("✅ Chop etishga ruxsat berdingiz.", show_alert=True)
-    target_group = GROUPS[0]
+    target_group = GROUPS[1]
     message = await call.message.edit_reply_markup()
     await message.send_copy(chat_id=target_group)
 
