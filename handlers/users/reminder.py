@@ -61,11 +61,11 @@ async def send_daily_reminder():
 
                 # Send the reminder message to the group
                 await bot.send_message(
-                    int(GROUPS[0]), 
+                    int(GROUPS[0:2]), 
                     f"<i>Assalomu aleykum</i>\n"
-                    f"🗓 <b>{sana}</b> sanasi kuni,\n"
-                    f"🫡 <b>{mention_link}</b> navbatchilikka siz tayinlangansiz!\n"
-                    f"🤲 Navbatchilikni yaxshi va tinch o'tkazib oling!",
+                    f"🗓 {sana} sanasi kuni,\n"
+                    f"🫡 <b>{mention_link}</b>aka navbatchilikka siz tayinlangansiz!\n"
+                    f"Navbatchilikni yaxshi va tinch o'tkazib oling! 🤲",
                     parse_mode="HTML"
                 )
 
@@ -77,8 +77,8 @@ async def send_daily_reminder():
                 return
 
 async def start_scheduler():
-    soat = 8
-    minut = 49
+    soat = 5
+    minut = 00
     scheduler.add_job(send_daily_reminder, "cron", hour=soat, minute=minut)
     scheduler.start()
     msg = f"Avtomatik eslatma: {soat} : {minut} ga o'rnatilgan!"
