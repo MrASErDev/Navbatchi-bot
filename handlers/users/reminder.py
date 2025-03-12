@@ -77,7 +77,7 @@ async def send_daily_reminder():
                 return
 
 async def start_scheduler():
-    soat = 5
+    soat = 15
     minut = 00
     scheduler.add_job(send_daily_reminder, "cron", hour=soat, minute=minut)
     scheduler.start()
