@@ -61,7 +61,7 @@ async def send_daily_reminder():
 
                 # Send the reminder message to the group
                 await bot.send_message(
-                    int(GROUPS[0]), 
+                    int(GROUPS[1]), 
                     f"<i>Assalomu aleykum</i>\n"
                     f"🗓 {sana} sanasi kuni,\n"
                     f"🫡 <b>{mention_link}</b>aka navbatchilikka siz tayinlangansiz!\n"
